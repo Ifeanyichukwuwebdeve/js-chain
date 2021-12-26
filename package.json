@@ -7,6 +7,11 @@
   "author": "Ifeanyichukwuwebdeve <kingifean@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "test": "jest --watchAll",
     "dev-test": "nodemon dev-test"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "jest": "^27.4.5"
   }
 }
