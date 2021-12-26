@@ -1,0 +1,12 @@
+{
+  "name": "blockchain-crypt",
+  "version": "0.1.0",
+  "description": "Blockchain with js",
+  "main": "index.js",
+  "repository": "git@github.com:Ifeanyichukwuwebdeve/js-chain.git",
+  "author": "Ifeanyichukwuwebdeve <kingifean@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev-test": "nodemon dev-test"
+  }
+}
