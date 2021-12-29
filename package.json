@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --watchAll",
-    "dev-test": "nodemon dev-test",
+    "dev-test": "nodemon dev-test.js",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
