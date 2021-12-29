@@ -8,10 +8,13 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --watchAll",
-    "dev-test": "nodemon dev-test"
+    "dev-test": "nodemon dev-test",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "dependencies": {
     "crypto-js": "^4.1.1",
+    "express": "^4.17.2",
     "jest": "^27.4.5"
   }
 }
