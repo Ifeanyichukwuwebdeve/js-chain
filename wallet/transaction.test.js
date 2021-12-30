@@ -23,6 +23,17 @@ describe('Transactions', () => {
     expect(transaction.input.amount).toEqual(wallet.balance)
   })
 
+  it('validates a valid transaction', () => {
+    // transaction.outputs[0].amount = 500000
+    // console.log(transaction)
+    expect(Transaction.verifyTransaction(transaction)).toBe(true)
+  })
+
+  it('invalidates a corrupt transaction', () => {
+    transaction.outputs[0].amount = 500000
+    expect(Transaction.verifyTransaction(transaction)).toBe(false)
+  })
+
   describe('transactiong with an amount that exceeds the balance', () => {
     beforeEach(() => {
       amount = 50000

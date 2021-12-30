@@ -16,12 +16,9 @@ class Wallet {
     `
   }
 
-  async signInput(dataHash) {
-    try {
-      return await this.keyPair.sign(dataHash)
-    } catch (error) {
-      error
-    }
+  signInput(dataHash) {
+    // console.log(dataHash)
+      return this.keyPair.sign(dataHash)
   }
 }
 
