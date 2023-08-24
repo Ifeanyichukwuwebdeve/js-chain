@@ -23,7 +23,14 @@ class Block {
   }
 
   static genesis() {
-    return new this('Genesis time', '---', 'fi1-rfss', ['ftes', 234], 0, DIFFICULTY)
+    return new this('Genesis time', '---', 'fi1-rfss', [{
+      input: {
+        timeStamp: Date.now(),
+        amount: 20000,
+        address: 'blockchain-wallet',
+      },
+      outputs: []
+    }], 0, DIFFICULTY)
   }
 
   static mineBlock(lastBlock, data) {

@@ -4,7 +4,7 @@
   "description": "Blockchain with js",
   "main": "index.js",
   "repository": "git@github.com:Ifeanyichukwuwebdeve/js-chain.git",
-  "author": "Ifeanyichukwuwebdeve <kingifean@gmail.com>",
+  "author": "greatAdams01 <kingifean@gmail.com>",
   "license": "MIT",
   "scripts": {
     "test": "jest --watchAll",
@@ -13,10 +13,12 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "crypto-js": "^4.1.1",
     "elliptic": "^6.5.4",
     "express": "^4.17.2",
     "jest": "^27.4.5",
+    "stellar-sdk": "^10.4.1",
     "uuid": "^8.3.2",
     "ws": "^8.4.0"
   }

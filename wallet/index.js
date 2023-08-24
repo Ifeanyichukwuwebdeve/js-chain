@@ -52,14 +52,15 @@ class Wallet {
  
     let startTime = 0
 
-    if(!walletInputTs) return
-    
-    const recentInput = walletInputTs.reduce(
-      (prev, current) => prev.input.timeStamp > current.input.timeStamp ? prev : current
-    )
 
-    balance = recentInput.outputs.find(output => output.address === this.publicKey).amount
-    startTime = recentInput.input.timeStamp
+    if(walletInputTs.length > 0) {
+
+      const recentInput = walletInputTs.reduce(
+        (prev, current) => prev.input.timeStamp > current.input.timeStamp ? prev : current
+      )
+      balance = recentInput.outputs.find(output => output.address === this.publicKey).amount
+      startTime = recentInput.input.timeStamp
+    }
 
     transactions.forEach(transaction => {
       if (transaction.input.timeStamp > startTime) {
