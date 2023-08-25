@@ -6,6 +6,10 @@ const Wallet = require('./wallet')
 const TransactionPool = require('./wallet/transaction-pool')
 const Miner = require('./miner')
 
+// Steller
+
+const StellerService = require('./steller')
+
 const PORT = process.env.PORT || 8000
 
 const app = express()
@@ -15,6 +19,13 @@ const wallet = new Wallet()
 const tp = new TransactionPool()
 const p2pServer = new P2pServer(bc, tp)
 const miner = new Miner(bc, tp, wallet, p2pServer)
+// Steller
+const stellar = new StellerService()
+
+stellar.createAssest().then(console.log)
+.catch(function (error) {
+  console.error("Error!", error);
+});
 
 app.get('/blocks', (req, res) => {
   res.json(bc.chain)
@@ -46,6 +57,13 @@ app.get('/mine-transaction', (req, res) => {
 app.get('/public-key', (req, res) => {
   res.json({ publicKey: wallet.publicKey })
 })
+
+// Steller 
+
+app.get('/steller-accounts', (req, res) => {
+  res.json({ accounts: stellar.getAccounts() })
+})
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`)

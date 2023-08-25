@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Blockchain with js",
   "main": "index.js",
-  "repository": "git@github.com:Ifeanyichukwuwebdeve/js-chain.git",
+  "repository": "git@github.com:greatAdams01/js-chain.git",
   "author": "greatAdams01 <kingifean@gmail.com>",
   "license": "MIT",
   "scripts": {
